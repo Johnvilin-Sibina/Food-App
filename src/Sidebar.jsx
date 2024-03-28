@@ -1,26 +1,51 @@
 import { Link } from "react-router-dom";
-function Sidebar() {
+
+function SideBar() {
   return (
     <div
-      className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark vh-100"
-      style={{ width: "280px" }}
+      className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark vh-100 position-fixed"
+      style={{ width: 280 }}
     >
       <a
         href="/"
         className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
-      ></a>
-      <span>Sidebar</span>
+      >
+        <span className="fs-4">Sidebar</span>
+      </a>
       <hr />
       <ul className="nav nav-pills flex-column mb-auto">
         <li className="nav-item">
-          <Link to={"/portal/list-hotel"} className="nav-link active" aria-current="page">
+          <Link
+            to="/portal/list-hotel"
+            className="nav-link active"
+            aria-current="page"
+          >
             Manage Hotel
           </Link>
         </li>
       </ul>
-      <Link to={"/"}><strong>Sign Out</strong></Link>
+      <hr />
+      <div className="dropdown">
+        <a
+          href="#"
+          className="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img
+            src="https://github.com/mdo.png"
+            alt=""
+            width="32"
+            height="32"
+            className="rounded-circle me-2"
+          />
+          <Link to={"/"}>
+            <strong>Sigout</strong>
+          </Link>
+        </a>
+      </div>
     </div>
   );
 }
 
-export default Sidebar;
+export default SideBar;
